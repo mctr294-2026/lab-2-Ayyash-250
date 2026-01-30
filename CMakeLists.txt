@@ -8,10 +8,10 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add executables
-add_executable(roots_demo src/roots/main.cpp)
+add_executable(roots_demo src/roots/main.cpp )
 
 # Library providing root-finding algorithms.
-add_library(roots src/roots/roots.cpp)
+add_library(roots src/roots/roots.cpp )
 target_include_directories(roots PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src/roots)
 target_compile_features(roots PUBLIC cxx_std_17)
 
@@ -30,6 +30,6 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 # Root-finding unit tests.
-add_executable(test_roots tests/test_roots.cpp)
+add_executable(test_roots tests/test_roots.cpp )
 target_link_libraries(test_roots PRIVATE roots GTest::gtest_main)
 add_test(NAME roots_test COMMAND test_roots)
